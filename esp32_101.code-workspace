@@ -1,0 +1,43 @@
+{
+	"folders": [
+		{
+			"name": "arduino wifiscan",
+			"path": "arduino-wifiscan"
+		},
+		{
+			"name": "espidf/arduino wifiscan",
+			"path": "espidf-arduino-wifiscan"
+		},
+		{
+			"name": "espidf hello-world",
+			"path": "espidf-hello-world"
+		},
+		{
+			"name": "espidf ble-adv",
+			"path": "espidf-ble-adv"
+		},
+		{
+			"name": "arduino serial-bt",
+			"path": "arduino serial-bt"
+		},
+		{
+			"name": "IDF CPP",
+			"path": "IDF CPP"
+		},
+		{
+			"name": "espidf sntp",
+			"path": "espidf sntp"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"string": "cpp",
+			"nvs_flash.h": "c",
+			"scan.c": "cpp",
+			"esp_log.h": "c",
+			"esp_event.h": "c",
+			"sntp.h": "c",
+			"err.h": "c"
+		}
+	}
+}
