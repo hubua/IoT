@@ -47,7 +47,7 @@ static esp_err_t event_handler(void *ctx, system_event_t *event);
 
 void app_main()
 {
-    ++boot_count; //asdasd
+    ++boot_count;
     ESP_LOGI(TAG, "Boot count: %d", boot_count);
 
     time_t now;
