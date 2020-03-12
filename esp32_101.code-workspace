@@ -21,8 +21,8 @@
 			"path": "arduino serial-bt"
 		},
 		{
-			"name": "IDF CPP",
-			"path": "IDF CPP"
+			"name": "espidf cpp",
+			"path": "espidf cpp"
 		},
 		{
 			"name": "espidf sntp",
@@ -37,7 +37,10 @@
 			"esp_log.h": "c",
 			"esp_event.h": "c",
 			"sntp.h": "c",
-			"err.h": "c"
+			"err.h": "c",
+			"ostream": "cpp",
+			"thread": "cpp",
+			"iostream": "cpp"
 		}
 	}
 }

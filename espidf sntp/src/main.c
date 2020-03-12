@@ -1,3 +1,9 @@
+/* LwIP SNTP example
+   This example code is in the Public Domain (or CC0 licensed, at your option.)
+   Unless required by applicable law or agreed to in writing, this
+   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+   CONDITIONS OF ANY KIND, either express or implied.
+*/
 #include <string.h>
 #include <time.h>
 #include <sys/time.h>
@@ -9,7 +15,7 @@
 #include "esp_event_loop.h"
 #include "esp_log.h"
 #include "esp_attr.h"
-#include "esp_deep_sleep.h"
+#include "esp_sleep.h"
 #include "nvs_flash.h"
 
 #include "lwip/err.h"
@@ -70,14 +76,14 @@ void app_main()
     strftime(strftime_buf, sizeof(strftime_buf), "%c", &timeinfo);
     ESP_LOGI(TAG, "The current date/time in New York is: %s", strftime_buf);
 
-    // Set timezone to China Standard Time
-    setenv("TZ", "CST-8", 1);
+    // Set timezone to Eastern European Time
+    setenv("TZ", "EET-2", 1);
     tzset();
     localtime_r(&now, &timeinfo);
     strftime(strftime_buf, sizeof(strftime_buf), "%c", &timeinfo);
-    ESP_LOGI(TAG, "The current date/time in Shanghai is: %s", strftime_buf);
+    ESP_LOGI(TAG, "The current date/time in EET is: %s", strftime_buf);
 
-    const int deep_sleep_sec = 10;
+    const int deep_sleep_sec = 30;
     ESP_LOGI(TAG, "Entering deep sleep for %d seconds", deep_sleep_sec);
     esp_deep_sleep(1000000LL * deep_sleep_sec);
 }
