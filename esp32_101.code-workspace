@@ -1,18 +1,6 @@
 {
 	"folders": [
 		{
-			"name": "arduino wifiscan",
-			"path": "arduino-wifiscan"
-		},
-		{
-			"name": "espidf/arduino wifiscan",
-			"path": "espidf-arduino-wifiscan"
-		},
-		{
-			"name": "espidf hello-world",
-			"path": "espidf-hello-world"
-		},
-		{
 			"name": "espidf ble-adv",
 			"path": "espidf-ble-adv"
 		},
@@ -27,6 +15,10 @@
 		{
 			"name": "espidf sntp",
 			"path": "espidf sntp"
+		},
+		{
+			"name": "DeepSleep",
+			"path": "DeepSleep"
 		}
 	],
 	"settings": {
