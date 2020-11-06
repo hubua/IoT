@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "esp_system.h"
-#include "esp_spi_flash.h"
+#include "driver/gpio.h"
+#include "sdkconfig.h"
 
-#include "esp_log.h"
-#include <iostream>
+//#include "esp_log.h"
+//#include <iostream>
 
 //#define DO_DEEP_SLEEP
+
+#define BLINK_GPIO GPIO_NUM_2
 
 static const char *TAG = "example";
 
@@ -35,14 +37,38 @@ void app_main()
     ESP_LOGI(TAG, "Boot count: %d!", boot_count);
 #endif
 
-    std::string s = "abcd";
+    //std::string s = "abcd";
 
     //TODO Why loop does not stop on delay, but prints several items first
 
+    int n = 0;
+
+    /*
+    UNCLEAR
+    set monitor speed from sdkconfig
+    filters and flags in ini
+    */
+
+    //int k = 1 / n;
+
+    //printf("%d\n", k);
+
+    gpio_pad_select_gpio(BLINK_GPIO);
+    gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
     for (int i = 0;; i = (i + 1) % 10)
     {
-        //printf("%d_%s ", i, s.c_str());
-        std::cout << i;
+        for (int i = 0; i < 10; i++)
+        {
+            n++;
+            printf("*");
+
+        }
+        
+        int state = i % 2;
+        gpio_set_level(BLINK_GPIO, state);
+        
+        printf("%d - state %d\n", n, state);
+
         vPortYield();
         delay(1000);
     }

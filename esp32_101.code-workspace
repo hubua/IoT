@@ -33,6 +33,7 @@
 			"ostream": "cpp",
 			"thread": "cpp",
 			"iostream": "cpp"
-		}
+		},
+		"platformio-ide.forceUploadAndMonitor": true
 	}
 }
